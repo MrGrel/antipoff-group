@@ -6,7 +6,7 @@
 }
 
 .section {
-  padding-bottom: 69px;
+  padding-bottom: 32px;
 }
 
 .header {
@@ -39,7 +39,7 @@
     color: #fff;
   }
 
-  &__button {
+  &__btn {
     position: absolute;
     top: -32px;
     right: 16px;
@@ -121,7 +121,7 @@
     }
   }
 
-  &__button {
+  &__btn {
     padding: 8px 16px;
     background: none;
     border: 1px solid rgba(21, 19, 23, 1);
