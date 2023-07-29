@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import img from '../styles/img/img';
 import { inActiveLikeSvg } from '../styles/img/svg';
 
@@ -24,7 +25,7 @@ const MainPage = () => (
                 <img src={img.avatar} className="users__item-avatar" alt="аватарка" />
                 <p className="users__item-text">Имя Фамилия</p>
                 <button className="users__item-button">{inActiveLikeSvg}</button>
-                <a href="" className="users__item-link" />
+                <Link to="partner" className="users__item-link" />
               </li>
             </ul>
 

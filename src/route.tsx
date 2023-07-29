@@ -14,11 +14,8 @@ const Routes = () => {
           <MainPage />
         </ProtectedRoute>
       ),
-      children: [
-        { element: <Navigate to="/partner" />, index: true },
-        { path: 'partner', element: <PartnerPage /> },
-      ],
     },
+    { path: 'partner', element: <PartnerPage /> },
     {
       path: 'register',
       element: <LoginOrRegister />,
