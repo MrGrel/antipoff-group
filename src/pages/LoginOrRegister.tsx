@@ -1,8 +1,9 @@
 import { useForm } from 'react-hook-form';
-import '../styles/LoginOrRegister/LoginOrRegister.style.scss';
 import { IFormValues } from '../types/login';
 
-export const LoginOrRegister = () => {
+import '../styles/LoginOrRegister.scss';
+
+const LoginOrRegister = () => {
   const {
     register,
     handleSubmit,
@@ -29,7 +30,7 @@ export const LoginOrRegister = () => {
               {...register('name', {
                 required: 'Обязательное поле для заполнения',
                 onBlur: (e) => {
-                  const value: string = e.target.value;
+                  const { value } = e.target;
                   e.target.value = (
                     value.slice(0, 1).toUpperCase() + value.slice(1, value.length).toLowerCase()
                   ).trim();
@@ -47,13 +48,10 @@ export const LoginOrRegister = () => {
               {...register('email', {
                 required: 'Обязательное поле для заполнения',
                 validate: {
-                  email: (value) => {
-                    return (
-                      value.match(
-                        /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-                      ) !== null || 'Убедитесь в правильности написания email'
-                    );
-                  },
+                  email: (value) =>
+                    value.match(
+                      /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                    ) !== null || 'Убедитесь в правильности написания email',
                 },
               })}
             />
@@ -78,7 +76,7 @@ export const LoginOrRegister = () => {
                 },
 
                 onBlur: (e) => {
-                  const value: string = e.target.value;
+                  const { value } = e.target;
                   e.target.value = value.trim();
                 },
               })}
@@ -117,3 +115,5 @@ export const LoginOrRegister = () => {
     </div>
   );
 };
+
+export default LoginOrRegister;

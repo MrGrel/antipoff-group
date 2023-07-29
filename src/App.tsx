@@ -1,13 +1,11 @@
-import React from 'react';
-import { LoginOrRegister } from './pages/LoginOrRegister';
-import { MainPage } from './pages/MainPage';
-import { PartnerPage } from './pages/PartnerPage';
+import { BrowserRouter } from 'react-router-dom';
+import Routes from './route';
 
 function App() {
   return (
-    <>
-      <PartnerPage />
-    </>
+    <BrowserRouter>
+      <Routes />
+    </BrowserRouter>
   );
 }
 
