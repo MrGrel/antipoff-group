@@ -1,25 +1,36 @@
-import { useNavigate } from 'react-router';
-import img from '../styles/img/img';
+import { useEffect } from 'react';
+import { useParams } from 'react-router';
+import { useTypeDispatch, useTypeSelector } from '../hooks/redux';
+import { getPartnerData } from '../store/actionCreator';
+
+import { BackButton } from '../components/button/BackButton';
+import { LogOut } from '../components/button/LogOut';
 import { emailSvg, phoneSvg } from '../styles/img/svg';
 
 import '../styles/PartnerPage.scss';
 
 const PartnerPage = () => {
-  const navigate = useNavigate();
+  const { partner } = useTypeSelector((state) => state.partnerReducer);
+  const dispatch = useTypeDispatch();
+  const param = useParams();
+
+  useEffect(() => {
+    if (!partner) {
+      dispatch(getPartnerData(Number(param)));
+    }
+  }, []);
 
   return (
     <div className="partner-page">
       <header className="header">
         <div className="container header__container">
-          <img className="header__avatar" src={img.avatar} alt="Аватарка" />
+          <img className="header__avatar" src={partner?.avatar} alt="Аватарка" />
           <div className="header__container-partner">
-            <p className="header__name">Имя Фамилия</p>
+            <p className="header__name">{`${partner?.first_name} ${partner?.last_name}`}</p>
             <p className="header__partner">Партнер</p>
           </div>
-          <button className="header__btn-back" onClick={(e) => navigate(-1)}>
-            Вернуться
-          </button>
-          <button className="header__btn-logout">Выход</button>
+          <BackButton className="header__btn-back" />
+          <LogOut className="header__btn-logout" />
         </div>
       </header>
       <main className="main">
@@ -43,10 +54,10 @@ const PartnerPage = () => {
               </p>
 
               <div className="partner__contacts">
-                <a href="" className="partner__contacts-tel">
+                <a href="tel:89265910171" className="partner__contacts-tel">
                   {phoneSvg}8-926-591-01-71
                 </a>
-                <a href="" className="partner__contacts-email">
+                <a href="https://yandex.ru" className="partner__contacts-email">
                   {emailSvg}email
                 </a>
               </div>

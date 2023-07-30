@@ -1,4 +1,4 @@
-import { Navigate, useRoutes } from 'react-router-dom';
+import { useRoutes } from 'react-router-dom';
 import { ProtectedRoute } from './utils/ProtectedRoute';
 
 import LoginOrRegister from './pages/LoginOrRegister';
@@ -15,7 +15,7 @@ const Routes = () => {
         </ProtectedRoute>
       ),
     },
-    { path: 'partner', element: <PartnerPage /> },
+    { path: 'partner/:id', element: <PartnerPage /> },
     {
       path: 'register',
       element: <LoginOrRegister />,

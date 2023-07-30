@@ -19,6 +19,12 @@
       display: flex;
       align-items: center;
       padding-left: 172px;
+
+      @media (max-width: 700px) {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 0;
+      }
     }
 
     &__avatar {
@@ -26,6 +32,10 @@
       height: 187px;
       margin-right: 32px;
       border-radius: 50%;
+
+      @media (max-width: 700px) {
+        margin: 0;
+      }
     }
 
     &__container-partner {
@@ -40,6 +50,11 @@
       font-size: 64px;
       line-height: 75px;
       color: #fff;
+
+      @media (max-width: 750px) {
+        font-size: 36px;
+        line-height: 42.19px;
+      }
     }
 
     &__partner {
@@ -48,6 +63,12 @@
       font-size: 32px;
       line-height: 37.5px;
       color: #fff;
+
+      @media (max-width: 750px) {
+        margin-bottom: 16px;
+        font-size: 20px;
+        line-height: 23.44px;
+      }
     }
 
     &__btn-back {
@@ -63,6 +84,10 @@
       line-height: 21.79px;
       color: #fff;
       cursor: pointer;
+
+      @media (max-width: 600px) {
+        border: none;
+      }
     }
 
     &__btn-logout {
@@ -78,6 +103,10 @@
       line-height: 21.79px;
       color: #fff;
       cursor: pointer;
+
+      @media (max-width: 600px) {
+        border: none;
+      }
     }
   }
 
@@ -89,12 +118,17 @@
   .partner {
     &__container {
       display: flex;
+      justify-content: space-between;
+      max-width: 950px;
+
+      @media (max-width: 830px) {
+        flex-direction: column-reverse;
+      }
     }
 
     &__text {
       max-width: 630px;
       margin: 0;
-      margin-right: 129px;
       font-weight: 400;
       font-size: 16px;
       line-height: 21.79px;
@@ -104,7 +138,13 @@
       display: flex;
       flex-direction: column;
 
+      @media (max-width: 830px) {
+        margin-bottom: 34px;
+      }
+
       &-tel {
+        display: flex;
+        align-items: center;
         margin: 0;
         margin-bottom: 25px;
         font-weight: 400;
@@ -119,6 +159,8 @@
       }
 
       &-email {
+        display: flex;
+        align-items: center;
         margin: 0;
         font-weight: 400;
         font-size: 16px;

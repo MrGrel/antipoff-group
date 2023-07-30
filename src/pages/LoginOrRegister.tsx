@@ -1,4 +1,9 @@
+import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
+import { useTypeDispatch, useTypeSelector } from '../hooks/redux';
+import { useNavigate } from 'react-router';
+
+import { getTokenRegistration } from '../store/actionCreator';
 import { IFormValues } from '../types/login';
 
 import '../styles/LoginOrRegister.scss';
@@ -13,8 +18,23 @@ const LoginOrRegister = () => {
     watch,
   } = useForm<IFormValues>();
 
+  const navigate = useNavigate();
+  const token = useTypeSelector((state) => state.tokenReducer.token);
+  const dispatch = useTypeDispatch();
+
+  useEffect(() => {
+    if (token !== '') {
+      navigate('/');
+    }
+  }, [token]);
+
   const onSubmit = (data: IFormValues) => {
-    console.log(data);
+    const userData = {
+      email: data.email,
+      password: data.password,
+    };
+
+    dispatch(getTokenRegistration(userData));
   };
 
   return (
