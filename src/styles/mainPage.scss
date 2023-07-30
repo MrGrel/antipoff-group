@@ -80,6 +80,7 @@
     &__list {
       display: grid;
       grid-template-columns: repeat(4, 305px);
+      justify-content: center;
       gap: 20px;
       width: 100%;
       margin-bottom: 56px;
