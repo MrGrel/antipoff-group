@@ -29,7 +29,7 @@ export const LogOut = ({ className }: IButton) => {
 
   return (
     <button className={className} onClick={handleClickLogOut}>
-      {isSmallWindowSize ? 'Выход' : logOutSvg}
+      {!isSmallWindowSize ? 'Выход' : logOutSvg}
     </button>
   );
 };

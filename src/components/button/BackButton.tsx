@@ -26,7 +26,7 @@ export const BackButton = ({ className }: IButton) => {
 
   return (
     <button className={className} onClick={handleClickNavigate}>
-      {isSmallWindowSize ? 'назад' : backSvg}
+      {!isSmallWindowSize ? 'назад' : backSvg}
     </button>
   );
 };

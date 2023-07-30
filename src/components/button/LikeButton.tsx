@@ -10,6 +10,7 @@ export const LikeButton = ({ className }: IButton) => {
 
   const handleClick = (): void => {
     setIsLiked((state) => !state);
+    // так же здесь был бы экшен для партнера с методом PATCH
   };
 
   return (
