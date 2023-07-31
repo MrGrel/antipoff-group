@@ -1,4 +1,11 @@
 .partner-page {
+  .container {
+    position: relative;
+    max-width: 1312px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+
   .section {
     padding-bottom: 32px;
   }
@@ -7,14 +14,6 @@
     padding: 39px 0;
     background: rgba(81, 38, 137, 1);
     margin-bottom: 48px;
-
-    .container {
-      position: relative;
-      max-width: 1312px;
-      margin: 0 auto;
-      padding: 0 16px;
-      background: rgba(81, 38, 137, 1);
-    }
 
     &__container {
       display: flex;

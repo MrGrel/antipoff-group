@@ -81,7 +81,7 @@ const LoginOrRegister = () => {
           <div className="form__input-container">
             <label className="form__legend">Пароль</label>
             <input
-              type="text"
+              type="password"
               className={errors.password ? 'form__input form__input-error' : 'form__input'}
               {...register('password', {
                 required: 'Обязательное поле для заполнения',
@@ -107,7 +107,7 @@ const LoginOrRegister = () => {
           <div className="form__input-container">
             <label className="form__legend">Подтвердите пароль</label>
             <input
-              type="text"
+              type="password"
               className={errors.passwordConfirm ? 'form__input form__input-error' : 'form__input'}
               {...register('passwordConfirm', {
                 required: 'Обязательное поле для заполнения',

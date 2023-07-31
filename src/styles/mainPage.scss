@@ -1,4 +1,11 @@
 .main-page {
+  .container {
+    position: relative;
+    max-width: 1312px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+
   .section {
     padding-bottom: 32px;
   }
@@ -7,14 +14,6 @@
     padding: 64px 0;
     background: rgba(81, 38, 137, 1);
     margin-bottom: 48px;
-
-    .container {
-      position: relative;
-      max-width: 1312px;
-      margin: 0 auto;
-      padding: 0 16px;
-      background: rgba(81, 38, 137, 1);
-    }
 
     &__container {
       display: flex;
@@ -85,6 +84,7 @@
       gap: 20px;
       width: 100%;
       margin-bottom: 56px;
+      padding: 0;
       list-style: none;
 
       @media (max-width: 1380px) {
