@@ -7,8 +7,7 @@ type Props = {
 };
 
 export const ProtectedRoute = ({ children }: Props) => {
-  // const user = useTypeSelector((state) => state.tokenReducer.token);
-  const user = '123';
+  const user = useTypeSelector((state) => state.tokenReducer.token);
 
   if (!user) {
     return <Navigate to="/register" />;
