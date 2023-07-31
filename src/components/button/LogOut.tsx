@@ -18,6 +18,12 @@ export const LogOut = ({ className }: IButton) => {
   };
 
   useEffect(() => {
+    if (window.innerWidth > 600) {
+      setIsSmallWindowSize(false);
+    } else {
+      setIsSmallWindowSize(true);
+    }
+
     window.addEventListener('resize', (e) => {
       if (window.innerWidth > 600) {
         setIsSmallWindowSize(false);
